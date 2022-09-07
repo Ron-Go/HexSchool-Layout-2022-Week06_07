@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    $footer
+\*------------------------------------*/
+.footer{
+  background-color: $color-bgc-footer;
+  &__container{
+    
+  }
+  &__copyright{
+    line-height: 19px;
+    text-align: center;
+    padding: $spacer * 1.5 0;
+    font-family: $font-family-secondary;
+    color: $color-font-footer;
+    @include mobile{
+      font-size: $spacer * .75;
+      padding: $spacer * 1 0;
+    }
+  }
+}

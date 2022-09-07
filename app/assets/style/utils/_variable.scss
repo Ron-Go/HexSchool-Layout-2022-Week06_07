@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    $variable 自定義
+\*------------------------------------*/
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer / 4,
+    2: $spacer / 2,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 2,
+    6: $spacer * 4,
+    7: $spacer * 5,
+    18: $spacer * 1.75,
+    36: $spacer * 2.25,
+    40: $spacer * 2.5,
+    48: $spacer * 3,
+    56: $spacer * 3.5,
+    72: $spacer * 4.5,
+);
+
+$font-size-base: 1rem;
+$font-size:(
+    0:$font-size-base * 0,
+    1:$font-size-base * 2.5,
+    2:$font-size-base * 2,
+    3:$font-size-base * 1.75,
+    4:$font-size-base * 1.5,
+    5:$font-size-base * 1.25,
+    6:$font-size-base * 1,
+    18:$font-size-base * 1.125,
+    48:$font-size-base * 3,
+);
+
+$color-font-base: #ffffff;
+$color-font-hamburger: #62DB54;
+$color-font-footer: #909090;
+$color-font-process-label: #62DB54;
+$color-font-studyStep-hover: #62DB54;
+$color-font-share-link: #62DB54;
+$color-font-feedback: #494755;
+
+$color-border-base: #000000;
+$color-border-hamburger-active: #62DB54;
+$color-border-skills: #2d2d2d;
+$color-border-skills-hover: #62DB54;
+$color-border-process: #ffffff;
+
+$color-bgc-primary: #1C1C1C;
+$color-bgc-secondary: #2D2D2D;
+$color-bgc-header-nav-hover: #62DB54;
+$color-bgc-footer: #1A1A1A;
+$color-bgc-skills: #2D2D2D;
+$color-bgc-skills-hover: #202020;
+$color-bgc-process: #1C1C1C;
+$color-bgc-studyStep: #1C1C1C;
+$color-bgc-share: #1C1C1C;
+$color-bgc-course: #000000;
+$color-bgc-course-item: #2d2d2d;
+$color-bgc-course-hover: #62DB54;
+$color-bgc-language: #2d2d2d;
+$color-bgc-joinus: #000000;
+$color-bgc-joinus-main: #202020;
+$color-bgc-courseIntro: #1C1C1C;
+$color-bgc-courseIntro-item: #2d2d2d;
+
+
+$color-hover-hamburger: #62DB54;
+$color-hover-seriesLink: #62DB54;
+
+
+
+
+$font-family-base: 'Noto Sans TC', sans-serif;
+$font-family-secondary: 'Azeret Mono', sans-serif;
+
+

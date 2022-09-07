@@ -1,0 +1,787 @@
+/*------------------------------------*\
+    $index
+\*------------------------------------*/
+
+// banner
+.banner{
+  &__container{
+    height: 680px;
+    background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week6-202207/bg_home.jpg?raw=true);
+    @include mobile{
+      height: 336px;
+      background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week6-202207/bg_home_mobile.jpg?raw=true);
+    }
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    &__main{
+      margin: auto auto;
+      border: 1px solid #fff;
+      .square{
+        display: block;
+        width: 10px;
+        height: 10px;
+      }
+    }
+    &__content{
+      padding-top: $spacer * 3;
+      padding-bottom: $spacer * 3;
+      @include mobile{
+        padding-top: $spacer * 2;
+        padding-bottom: $spacer * 2;
+      }
+    }
+  }
+  &__title{
+    @include mobile{
+      font-size: $font-size-base * 1.5;
+    }
+  }
+  &__caption{
+    font-size: $font-size-base * .875;
+  }
+}
+
+// skills
+.skills{
+  background-color: $color-bgc-skills;
+}
+
+.skills{
+  &__list{
+    &__item{
+      & > .title{
+        position: relative;
+        font-size: $font-size-base * 1.75;
+        line-height: 40px !important;
+        margin-top: auto;
+        margin-bottom: auto;
+        &::after{
+          position: absolute;
+          bottom: -15px;
+          left: 0px;
+          content: "";
+          width: 56px;
+          height: 3px;
+          background-color: #62DB54;
+          transition: all .3s ease-in-out;
+          @include mobile{
+            left: 50%;
+            transform: translate(-50%);
+          }
+        }
+        @include mobile{
+          font-size: $font-size-base * 1.5;
+          margin-bottom: $spacer * 1;
+        }
+      }
+      .item{
+        &__logo{
+          font-size: 50px;
+          line-height: 50px;
+          color: #909090;
+        }
+        &__title, &__caption{
+          transition: all 0.3s ease-in-out;
+          line-height: 1.445!important;
+          color: #909090;
+        }
+        @include mobile{
+          &__logo{
+            background-image: linear-gradient(180deg, #62DB54, #09ACF5);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+          }
+          &__title, &__caption{
+            color: #ffffff;
+          }
+        }
+      }
+      .item__container{
+        background-color: $color-bgc-skills;
+        @include mobile{
+          background-color: $color-bgc-skills-hover;
+        }
+      }
+      + .skills__list__item{
+        margin-top: $spacer * 1.5;
+      }
+    }
+  }
+}
+
+.skills{
+  &__list{
+    &__item{
+      &:nth-of-type(1):hover{
+        .title{
+          &::after{
+            width: 100%;
+            @include mobile{
+              width: 50px;
+            }
+          }
+        }
+      }
+      &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4){
+        &:hover{
+          .item__container{
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            background-color: $color-bgc-skills-hover;
+            z-index: 10;
+            &::before{
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              content: "";
+              width: 100%;
+              height: 266px;
+              border: 1px solid $color-border-skills-hover;
+              @include mobile{
+                border: none;
+              }
+              border-radius: 12px;
+              transform: translate(-50%,-50%);
+              z-index: -10;
+            }
+          }
+          .item{
+            &__logo{
+              background-image: linear-gradient(180deg, #62DB54, #09ACF5);
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent;
+            }
+            &__title, &__caption{
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 漸層文字
+.gradient-text-custom {
+  background-image: linear-gradient(180deg, #62DB54, #09ACF5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+// process
+.process{
+  background-color: $color-bgc-process;
+  &__title{
+    margin-bottom: $spacer * 5.625;
+    @include mobile{
+      margin-bottom: $spacer * 4.125;
+    }
+    .title{
+      position: relative;
+      &::before{
+        position: absolute;
+        top: 56px;
+        left: 56px;
+        right: 56px;
+        content: "";
+        width: 56px;
+        height: 3px;
+        background-color: #62DB54;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  &:hover{
+    .process__title .title{
+      &::before{
+        left: 0px;
+        right: 0px;
+        width: 168px;
+      }
+    }
+  }
+}
+
+.process{
+  &__list{
+    &__item{
+      .item__container{
+        position: relative;
+        border: 1px solid $color-border-process;
+        border-radius: 12px;
+      }
+      .item__label{
+        position: absolute;
+        top: 0px;
+        left: 40px;
+        transform: translateY(-50%);
+        color: $color-font-process-label;
+        font-family: $font-family-secondary;
+        background-color: $color-bgc-process;
+      }
+      & + .process__list__item{
+        @include mobile{
+          margin-top: $spacer * 3.125;
+        }
+      }
+    }
+  }
+}
+
+// language
+.language{
+  background-color: $color-bgc-language;
+  &__list{
+    &__item{
+      .item__button{
+        border: 1px solid #ffffff;
+      }
+      & + .language__list__item{
+        margin-left: $spacer * 1;
+      }
+    }
+  }
+}
+
+.language{
+  &__title{
+    .title{
+      position: relative;
+      &::before{
+        position: absolute;
+        top: 56px;
+        left: 157px;
+        right: 157px;
+        content: "";
+        width: 50px;
+        height: 3px;
+        background-color: #62DB54;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  &:hover{
+    .language__title{
+      .title{
+        &::before{
+          left: 0px;
+          right: 0px;
+          width: 364px;
+        }
+      }
+    }
+  }
+}
+
+// course
+.course{
+  background-color: $color-bgc-course;
+  &__list{
+    &__item{
+      & + .course__list__item{
+        @include mobile{
+          margin-top: $spacer * 1.5;
+        }
+      }
+      .item{
+        &__container{
+          height: 100%;
+          border-radius: 24px;
+          background-color: $color-bgc-course-item;
+          position: relative;
+          z-index: 100;
+          &::before{
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            content: "";
+            border: 4px solid transparent;
+            border-radius: 24px;
+            z-index: -10;
+            transition: all 0.3s ease-in-out;
+          }
+          &:hover{
+            &::before{
+              border: 2px solid $color-bgc-course-hover;
+              @include mobile{
+                border: 2px solid transparent;
+              }
+            }
+          }
+        }
+        &__price{
+          border-top: 1px solid #ffffff;
+          padding-top: 15px;
+          & > span{
+            vertical-align: 6px;
+          }
+          & > p{
+            line-height: 1.125;
+          }
+        }
+      }
+    }
+  }
+}
+
+.course{
+  &__title{
+    .title{
+      position: relative;
+      &::before{
+        position: absolute;
+        top: 56px;
+        left: 59px;
+        right: 59px;
+        content: "";
+        width: 50px;
+        height: 3px;
+        background-color: #62DB54;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  &:hover{
+    .course__title{
+      .title{
+        &::before{
+          left: 0px;
+          right: 0px;
+          width: 168px;
+        }
+      }
+    }
+  }
+}
+
+// studyStep
+.studyStep{
+  &__list{
+    &__item{
+      &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4){
+        padding-top: 615px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        overflow: hidden;
+        @include mobile{
+          padding-top: 263px;
+        }
+      }
+    }
+    &__item{
+      &:nth-of-type(1){
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week6-202207/info01.jpg?raw=true);
+      }
+      &:nth-of-type(2){
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week6-202207/info02.jpg?raw=true);
+      }
+      &:nth-of-type(3){
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week6-202207/info03.jpg?raw=true);
+      }
+      &:nth-of-type(4){
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week6-202207/info04.jpg?raw=true);
+      }
+    }
+  }
+}
+
+.studyStep{
+  &__list{
+    &__item{
+      position: relative;
+      .item{
+        &__container{
+          position: absolute;
+          top: 0px;left: 0px;right: 0px;bottom: 0px;
+          background-color: rgba(#1C1C1C, 0.9);
+          @include mobile{
+            background-color: rgba(#1C1C1C, 0.12);
+          }
+          transition: all 0.3s ease-in-out;
+        }
+        &__logo{
+          font-size: $font-size-base * 1.75;
+          font-variation-settings: 'FILL' 1;
+          transition: all 0.3s ease-in-out;
+        }
+        &__title{
+          position: relative;
+          &::before{
+            position: absolute;
+            bottom: -16px;
+            left: 0px;
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: #ffffff;
+            transition: all 0.3s ease-in-out;
+            @include mobile{
+              bottom: -16px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+        }
+        &__container:hover{
+          background-color: rgba(#1C1C1C, 0.12);
+          .item{
+            &__logo{
+              color: $color-font-studyStep-hover;
+            }
+            &__title{
+              &::before{
+                width: 70px;
+                @include mobile{
+                  width: 50px;
+                }
+                background-color: $color-font-studyStep-hover;
+              }
+            }
+          }
+        }
+        @include mobile{
+          &__title{
+            &::before{
+              bottom: -16px;
+              left: 50%;
+              transform: translateX(-50%);
+              background-color: $color-font-studyStep-hover;
+            }
+          }
+          &__logo{
+            color: $color-font-studyStep-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+// share
+.share{
+  background-color: $color-bgc-share;
+  &__title{
+    .title{
+      position: relative;
+      &::before{
+        position: absolute;
+        top: 56px;
+        left: 31px;
+        right: 31px;
+        content: "";
+        width: 50px;
+        height: 3px;
+        background-color: #62DB54;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  &:hover{
+    .share__title{
+      .title{
+        &::before{
+          left: 0px;
+          right: 0px;
+          width: 112px;
+        }
+      }
+    }
+  }
+  &__list{
+    &__item{
+      .item__container{
+        position: relative;
+        .square{
+          border-color: transparent;
+          transition: all 0.3s ease-in-out;
+          @include mobile{
+            display: none;
+          }
+        }
+        &:hover{
+          .square{
+            border-color: #62db54;
+          }
+          .border{
+            &--top--start{
+              top: 0px;
+              left: 0px;
+            }
+            &--top--end{
+              top: 0px;
+              right: 0px;
+            }
+            &--bottom--start{
+              bottom: 0px;
+              left: 0px;
+            }
+            &--bottom--end{
+              bottom: 0px;
+              right: 0px;
+            }
+          }
+        }
+      }
+      .item__link{
+        color: $color-font-share-link;
+      }
+      & + .share__list__item{
+        @include mobile{
+          margin-top: $spacer * 1.5;
+        }
+      } 
+    }
+  }
+}
+
+.border{
+  &--top--start{
+    border-top: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-radius: 16px 0 0 0;
+    top: -6px;
+    left: -6px;
+}
+  &--top--end{
+    border-top: 1px;
+    border-right: 1px;
+    border-style: solid;
+    border-radius: 0 16px 0 0;
+    top: -6px;
+    right: -6px;
+}
+  &--bottom--start{
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-radius: 0 0 0 16px;
+    bottom: -6px;
+    left: -6px;
+  }
+  &--bottom--end{
+    border-bottom: 1px;
+    border-right: 1px;
+    border-style: solid;
+    border-radius: 0 0 16px 0;
+    bottom: -6px;
+    right: -6px;
+  }
+}
+
+.square--32{
+  position: absolute;
+  width: 32px;
+  height: 32px;
+}
+
+
+
+
+
+
+.feedback {
+  background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week6-202207/bg_share.jpg?raw=true);
+  height: 733px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @media (max-width:991px) {
+    height: auto;
+  }
+  &__title{
+    position: relative;
+    &::before{
+      position: absolute;
+      top: 96px;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 50px;
+      height: 3px;
+      background-color: #62DB54;
+      transition: all 0.3s ease-in-out;
+    }
+    @include mobile{
+      font-size: $font-size-base * 1.5;
+      &::before{
+        top: 121px;
+      }
+    }
+  }
+  &:hover{
+    .feedback__title{
+      &::before{
+        width: 442px;
+        @include mobile{
+          width: 105px;
+        }
+      }
+    }
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 429px;
+  @media (max-width:991px) {
+    height: auto;
+  }
+  &-img {
+    top: 0;
+    left: 10px;
+    width: 60%;
+    height: 90%;
+    border-radius: 24px;
+    position: absolute;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #7C7E77;
+      border-radius: 24px;
+      left: -10px;
+      top: 10px;
+      z-index: -1;
+      @media (max-width:991px) {
+        left: -5px;
+        top: 5px;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+    }
+    @media (max-width:991px) {
+      position: relative;
+      width: calc(100% - 5px);
+      height: 213px;
+      left: 5px;
+      margin-bottom: 40px;
+    }
+  }
+  .card {
+    width: 45%;
+    padding: 32px;
+    border-radius: 24px 24px 24px 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    h3 {
+      font-size: 18px;
+      color: $color-font-feedback;
+    }
+    p {
+      color: $color-font-feedback;
+    }
+    &-img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      right: 32px;
+      bottom: 100%;
+      transform: translateY(50%);
+      @media (max-width:991px) {
+        width: 80px;
+        height: 80px;
+        right: 24px;
+        top: -30px;
+        bottom: auto;
+        transform: none;
+      }
+    }
+    @media (max-width:991px) {
+      position: relative;
+      width: 100%;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .swiper-button-next:after, .swiper-button-prev:after {
+    content: '';
+  }
+
+  &-button-next, &-button-prev {
+    position: unset;
+    width: 24px;
+    height: 24px;
+    margin-top: -42px;
+    color: #62DB54;
+  }
+
+  &-button-prev{
+    margin-right: -40px;
+  }
+
+  .swiper-pagination {
+    position: unset;
+    width: auto;
+    margin-top: -15px;
+    .swiper-pagination-bullet {
+      background-color: #62DB54;
+      opacity: initial;
+      &-active {
+        width: 16px;
+        border-radius: 100px;
+      }
+    }
+  }
+
+  &-buttons {
+    bottom: 0;
+    left: 30%;
+    transform: translateX(-50%);
+    z-index: 10;
+    position: absolute;
+    @media (max-width: 991px) {
+      position: initial;
+      transform: none;
+    }
+  }
+}
+
+.joinUs{
+  background-color: $color-bgc-joinus;
+  &__container{
+    @media (max-width:1920px){
+      max-width: 990px;
+      margin: 0 auto;
+      padding: 0 $spacer * .75;
+    }
+  }
+  &__main{
+    border-radius: 24px;
+    background-color: $color-bgc-joinus-main;
+    .main{
+      &__logo{
+        font-size: $font-size-base * 6.25;
+        font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+      }
+      &__title{
+        line-height: 40px;
+        @include mobile{
+          font-size: 24px;
+        }
+      }
+      &__caption{
+        @include mobile{
+          font-size: $font-size-base * 1;
+        }
+      }
+    }
+  }
+}

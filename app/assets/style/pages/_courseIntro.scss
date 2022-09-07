@@ -1,0 +1,58 @@
+.courseIntro{
+  background-color: $color-bgc-courseIntro;
+  &__list{
+    &__item{
+      background-color: $color-bgc-courseIntro-item;
+    }
+  }
+}
+
+.courseIntro{
+  &__series{
+    .series__list{
+      &__item{
+        text-overflow:ellipsis;
+      }
+      &__item + .series__list__item{
+        margin-left: 16px;
+      }
+      .series__list__item .item__btn{
+        width: max-content;
+        &:hover{
+          background-color: transparent;
+          color: $color-hover-seriesLink;
+          border-color: $color-hover-seriesLink;
+        }
+      }
+    }
+  }
+}
+
+.courseIntro{
+  &__list{
+    @include mobile{
+      margin: 0 0;
+    }
+    &__item{
+      border-radius: 24px;
+      .item__container{
+        &__content{
+          width: 58.77%;
+          @include mobile{
+            width: 100%;
+          }
+        }
+        &__info{
+          .info__price{
+            line-height: 1.125;
+          }
+          .info__button > a{
+            padding-top: 7px;
+            padding-bottom: 7px;
+            line-height: 1.4444;
+          }
+        }
+      }
+    }
+  }
+}

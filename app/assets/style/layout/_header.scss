@@ -1,0 +1,144 @@
+
+/*------------------------------------*\
+    $header
+\*------------------------------------*/
+
+header{
+  background-color: $color-bgc-secondary;
+  z-index: 100;
+}
+
+.header{
+  &__container{
+    display: flex;
+    align-items: center;
+    background-color: $color-bgc-secondary;
+  }
+  &__logo{
+    margin-right: auto;
+    .logo__link{
+      display: block;
+      width: 172px;
+      height: 42px;
+      background-image: url(https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/logo.svg);
+      @include mobile{
+        width: 24px;
+        height: 24px;
+        background-image: url(https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/logo2.svg);
+      }
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      text-indent: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  &__hamburger{
+    position: relative;
+    display: none;
+    width: 24px;
+    padding-top: 24px;
+    @include mobile{
+      display: block;
+    }
+    color: $color-font-hamburger;
+    &:hover{
+      color: darken($color-hover-hamburger, 20%);
+    }
+    span{
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    &--active::before{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "";
+      width: 30px;
+      height: 30px;
+      border: 2px solid $color-border-hamburger-active;
+      border-radius: 4px;
+      transform: translate(-50%,-50%);
+    }
+  }
+  &__list{
+    &__item{
+      .item__link{
+        display: block;
+        line-height: 1.4445;
+      }
+    }
+    &__item + &__item{
+      margin-left: $spacer * 3;
+    }
+    &__item:last-child{
+      span{
+        vertical-align: -5px;
+        margin-right: 4px;
+        font-variation-settings: 'FILL' 1;
+      }
+    }
+  }
+}
+
+header{
+  position: relative;
+  &::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 50%;
+    height: 2px;
+    background-color: #62DB54;
+  }
+  &::after{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: "";
+    width: 50%;
+    height: 2px;
+    background-color: #09ACF5;
+  }
+}
+
+@include mobile{
+  .header{
+    &__nav{
+      position: absolute;
+      top: -102px;
+      left: 0px;
+      right: 0px;
+      padding: $spacer * .75 0;
+      background-color: $color-bgc-secondary;
+      z-index: -10;
+      transition: all 0.3s ease-in-out;
+    }
+    &__nav--active{
+      top: 72px;
+    }
+    &__list{
+      flex-direction: column;
+      text-align: center;
+      &__item{
+        .item__link{
+          width: 100%;
+          padding: $spacer * .75 0;
+          transition: all 0.3s ease-in-out;
+          &:hover{
+            color: $color-bgc-header-nav-hover;
+            background-color: lighten($color-bgc-secondary, 15%);
+          }
+        }
+      }
+      &__item + &__item{
+        margin-left: 0px;
+      }
+    }
+  }
+}
