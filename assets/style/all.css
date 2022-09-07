@@ -12443,6 +12443,10 @@ header {
   font-family: "Azeret Mono", sans-serif;
   background-color: #1C1C1C; }
 
+@media (max-width: 992px) {
+  .process__list__item + .process__list__item {
+    margin-top: 3.125rem; } }
+
 @media (max-width: 767px) {
   .process__list__item + .process__list__item {
     margin-top: 3.125rem; } }
@@ -12456,6 +12460,9 @@ header {
 
 .language__title .title {
   position: relative; }
+  @media (max-width: 767px) {
+    .language__title .title {
+      font-size: 1.5rem; } }
   .language__title .title::before {
     position: absolute;
     top: 56px;
@@ -12468,11 +12475,19 @@ header {
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out; }
+    @media (max-width: 767px) {
+      .language__title .title::before {
+        top: 86px;
+        left: 83px;
+        right: 83px; } }
 
 .language:hover .language__title .title::before {
   left: 0px;
   right: 0px;
   width: 364px; }
+  @media (max-width: 767px) {
+    .language:hover .language__title .title::before {
+      width: 216px; } }
 
 .course {
   background-color: #000000; }
@@ -12952,7 +12967,7 @@ header {
       padding: 0 0.75rem; } }
   @media (max-width: 767px) {
     .container-auto {
-      max-width: 372px;
+      max-width: 375px;
       padding: 0 0.75rem; } }
 
 .pt-0 {
