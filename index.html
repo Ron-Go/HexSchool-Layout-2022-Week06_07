@@ -402,7 +402,7 @@
       <li
       data-aos="fade-up"
       data-aos-duration="800" data-aos-offset="400"
-      class="share__list__item col-12 col-lg-4 mt-sm-4">
+      class="share__list__item col-12 col-lg-4 mt-sm-4 mt-lg-0">
         <div class="item__container p-lg-5">
           <div class="square square--32 border--top--start"></div>
           <div class="square square--32 border--top--end"></div>
@@ -417,7 +417,7 @@
       <li
       data-aos="fade-up"
       data-aos-duration="800" data-aos-offset="500"
-      class="share__list__item col-12 col-lg-4 mt-sm-4">
+      class="share__list__item col-12 col-lg-4 mt-sm-4 mt-lg-0">
         <div class="item__container p-lg-5">
           <div class="square square--32 border--top--start"></div>
           <div class="square square--32 border--top--end"></div>
@@ -513,7 +513,9 @@
   <script src="./assets/js/all.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-  AOS.init();
+  AOS.init({
+  once: true, 
+});
   </script>
 </body>
 
