@@ -1,10 +1,46 @@
----
-title: 程式家教-課程介紹
-layout: ./app/layout.ejs
-engine: ejs
-current: courseIntro
----
-<section class="courseIntro py-40">
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>程式家教-課程介紹</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="./assets/style/all.css">
+
+<body>
+  <header class="header sticky-top">
+    <div class="header__container container-auto py-4">
+      <h1 class="header__logo">
+        <a class="logo__link" href="./index.html">logo</a>
+      </h1>
+      <a class="header__hamburger" href="#">
+        <span class="material-symbols-outlined">drag_handle</span>
+      </a>
+      <nav class="header__nav">
+        <ul class="header__list d-flex mb-0 ps-0">
+          <li class="header__list__item">
+            <a href="./index.html" class="item__link">首頁</a>
+          </li>
+          <li class="header__list__item">
+            <a href="./courseIntro.html" class="item__link">
+              課程介紹
+            </a>
+          </li>
+          <li class="header__list__item">
+            <a href="#" class="item__link">
+              <span class="material-symbols-outlined">account_circle</span>
+              登入
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="courseIntro py-40">
   <div class="courseIntro__container container-auto row gx-1">
     <div class="courseIntro__series col-12 col-lg-10 gx-1 mx-lg-auto">
       <ul class="series__list d-flex ps-0 mb-48 overflow-auto">
@@ -133,3 +169,19 @@ current: courseIntro
     </ul>
   </div>
 </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__container container-auto">
+      <p class="footer__copyright">Coding Home © 2022 All Rights Reserved</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/all.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+  </script>
+</body>
+
+</html>
