@@ -254,6 +254,9 @@
   &__title{
     .title{
       position: relative;
+      @include pad{
+        font-size: $font-size-base * 1.5;
+      }
       @include mobile{
         font-size: $font-size-base * 1.5;
       }
@@ -267,6 +270,11 @@
         height: 3px;
         background-color: #62DB54;
         transition: all 0.3s ease-in-out;
+        @include pad{
+          top: 86px;
+          left: 83px;
+          right: 83px;
+        }
         @include mobile{
           top: 86px;
           left: 83px;
@@ -436,6 +444,11 @@
             height: 3px;
             background-color: #ffffff;
             transition: all 0.3s ease-in-out;
+            @include pad{
+              bottom: -16px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
             @include mobile{
               bottom: -16px;
               left: 50%;
@@ -515,6 +528,9 @@
         .square{
           border-color: transparent;
           transition: all 0.3s ease-in-out;
+          @include pad{
+            display: none;
+          }
           @include mobile{
             display: none;
           }
@@ -622,6 +638,12 @@
       height: 3px;
       background-color: #62DB54;
       transition: all 0.3s ease-in-out;
+    }
+    @include pad{
+      font-size: $font-size-base * 1.5;
+      &::before{
+        top: 121px;
+      }
     }
     @include mobile{
       font-size: $font-size-base * 1.5;
@@ -768,14 +790,12 @@
 
 .joinUs{
   background-color: $color-bgc-joinus;
-  &__container{
-    @media (max-width:1920px){
-      max-width: 990px;
-      margin: 0 auto;
-      padding: 0 $spacer * .75;
-    }
-  }
+  &__container{}
   &__main{
+    width: 74.538%;
+    @include mobile{
+      width: 100%;
+    }
     border-radius: 24px;
     background-color: $color-bgc-joinus-main;
     .main{
